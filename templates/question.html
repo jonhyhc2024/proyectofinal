@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Ask a Question</h1>
+<form method="post">
+    <label for="title">Title:</label>
+    <input type="text" name="title" required>
+    <label for="body">Question:</label>
+    <textarea name="body" required></textarea>
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}

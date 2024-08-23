@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{{ question.title }}</h1>
+    <p>{{ question.body }}</p>
+    <p>Asked by {{ question.author.username }} on {{ question.date_posted.strftime('%Y-%m-%d') }}</p>
+    <hr>
+    <h2>Answers</h2>
+    {% for answer in question.answers %}
+        <div>
+            <p>{{ answer.body }}</p>
+            <p>Answered by {{ answer.author.username }} on {{ answer.date_posted.strftime('%Y-%m-%d') }}</p>

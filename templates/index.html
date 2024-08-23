@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Recent Questions</h1>
+    {% for question in questions %}
+        <div>
+            <h2><a href="{{ url_for('question', question_id=question.id) }}">{{ question.title }}</a></h2>
+            <p>{{ question.body }}</p>
+            <p>Posted by {{ question.author.username }} on {{ question.date_posted.strftime('%Y-%m-%d') }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
